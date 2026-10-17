@@ -38,6 +38,37 @@
         .info-card ul { padding-left: 20px; }
         .info-card ul li { margin-bottom: 5px; }
 
+        /* Junior High School Section */
+        .jhs-section { background: linear-gradient(to bottom, rgba(20,30,45,0.95), rgba(15,25,35,0.98)); color: white; padding: 80px 0; position: relative; overflow: hidden; }
+        .jhs-section h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; text-align: center; }
+        .jhs-section .jhs-subtitle { font-size: 1rem; color: #b0b0b0; text-align: center; max-width: 700px; margin: 0 auto 50px auto; line-height: 1.6; }
+        .jhs-card { background-color: #1a2e3d; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-left: 5px solid #f0ad4e; max-width: 900px; margin: 0 auto; }
+        .jhs-card h3 { color: #f0ad4e; font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; }
+        .jhs-card p { font-size: 0.95rem; color: #d1d1d1; line-height: 1.7; }
+        .jhs-card ul { font-size: 0.9rem; color: #d1d1d1; line-height: 1.8; padding-left: 20px; }
+
+        /* School Events Carousel Section */
+        .events-section { background: linear-gradient(135deg, #e8f4f8 0%, #f5e6f0 100%); color: #333; padding: 70px 0 80px 0; position: relative; overflow: hidden; }
+        .events-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 40px; text-align: center; color: #2c3e50; }
+        .events-carousel-wrap { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+        .events-carousel-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 20px; background: linear-gradient(135deg, #7fb3d5 0%, #b19cd9 100%); filter: blur(40px); opacity: 0.6; z-index: 0; }
+        .events-carousel-inner { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; min-height: 520px; }
+        .event-slide { display: none; width: 100%; max-width: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.35); background-color: white; }
+        .event-slide.active { display: block; animation: eventFadeIn 0.4s ease; }
+        @keyframes eventFadeIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+        .event-slide img { width: 100%; display: block; background-color: #fff; }
+        .event-slide .event-caption { padding: 14px 18px; background-color: #1a4d3e; color: white; }
+        .event-slide .event-caption h4 { font-size: 0.95rem; font-weight: 700; margin: 0 0 4px 0; }
+        .event-slide .event-caption p { font-size: 0.78rem; color: #c9e4d5; margin: 0; line-height: 1.4; }
+        .event-placeholder { display: flex; align-items: center; justify-content: center; height: 520px; background: linear-gradient(135deg, #3d2a4d, #2a1a35); color: #fff; font-size: 0.85rem; font-weight: 600; text-align: center; padding: 20px; }
+        .event-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background-color: white; border: 1px solid #ddd; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #333; transition: 0.2s; z-index: 5; user-select: none; }
+        .event-nav-btn:hover { background-color: #1a4d3e; color: white; border-color: #1a4d3e; }
+        .event-nav-btn.prev { left: 0; }
+        .event-nav-btn.next { right: 0; }
+        .event-dots { display: flex; justify-content: center; gap: 10px; margin-top: 30px; }
+        .event-dot { width: 12px; height: 12px; border-radius: 50%; background-color: #c9d6df; cursor: pointer; transition: 0.2s; border: none; padding: 0; }
+        .event-dot.active { background-color: #1a4d3e; transform: scale(1.2); }
+
         /* Strands Section */
         .strands-section { background: linear-gradient(to bottom, rgba(0,40,20,0.95), rgba(0,30,15,0.98)); color: white; padding: 80px 0; position: relative; overflow: hidden; }
         .strands-bg { position: absolute; top:0; left:0; width: 100%; height: 100%; background-image: url('background.jpg'); background-size: cover; background-position: center; filter: blur(10px) brightness(0.3); z-index: -1; }
@@ -287,7 +318,7 @@
         .admin-modal-overlay.active { display: flex; }
         .admin-modal { background-color: white; border-radius: 10px; width: 100%; max-width: 1000px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); overflow: hidden; }
         .admin-modal-header { background-color: #1a4d3e; color: white; padding: 18px 25px; display: flex; justify-content: space-between; align-items: center; }
-        .admin-modal-header h3 { font-size: 1.1rem; font-weight: 700; margin: 0; }
+        .admin-modal-header h3 { font-size: 1.1rem; font-weight: 700; margin: 0; flex-grow: 1; }
         .admin-modal-close { background-color: rgba(255,255,255,0.15); color: white; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; line-height: 1; }
         .admin-modal-close:hover { background-color: rgba(255,255,255,0.3); }
         .admin-modal-body { padding: 25px; max-height: 75vh; overflow-y: auto; }
@@ -313,12 +344,21 @@
         .btn-edit-student { background-color: white; color: #fd7e14; border-color: #fd7e14; }
         .btn-edit-student:hover { background-color: #fd7e14; color: white; }
         .btn-dots {
-            background-color: white; color: #495057; border: 1px solid #ced4da;
-            font-size: 0.9rem; font-weight: 900; padding: 2px 8px; border-radius: 4px;
+            background-color: #dc3545; color: white; border: 1px solid #dc3545;
+            font-size: 0.95rem; font-weight: 900; padding: 4px 12px; border-radius: 6px;
             cursor: pointer; transition: 0.2s; line-height: 1;
         }
-        .btn-dots:hover { background-color: #495057; color: white; border-color: #495057; }
-        .directory-action-bar { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 10px; }
+        .btn-dots:hover { background-color: #b02a37; border-color: #b02a37; }
+        .directory-action-bar { display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding: 0 0 6px 0; }
+        .directory-header-row {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            margin-bottom: 2px;
+            min-height: 30px;
+        }
         .btn-cancel-select { background-color: white; color: #666; border: 1px solid #ccc; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
         .btn-cancel-select:hover { background-color: #f8f9fa; }
         .btn-delete-selected { background-color: #dc3545; color: white; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: 0.2s; }
@@ -494,7 +534,7 @@
         .profile-info-row .info-value { color: #222; font-weight: 700; text-align: right; }
 
         /* Profile dropdown in navbar */
-        .profile-dropdown-wrap { position: relative; display: inline-block; }
+        .profile-dropdown-wrap { position: relative; display: inline-block; z-index: 50000; }
         .profile-dropdown-btn {
             display: inline-flex; align-items: center; gap: 8px; background-color: #f1f3f5;
             border: 1px solid #ddd; border-radius: 20px; padding: 5px 14px 5px 6px;
@@ -508,7 +548,7 @@
         .profile-dropdown-menu {
             display: none; position: absolute; right: 0; top: calc(100% + 8px);
             background-color: white; border: 1px solid #e9ecef; border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15); min-width: 230px; z-index: 40000; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); min-width: 230px; z-index: 50000; overflow: hidden;
         }
         .profile-dropdown-menu.active { display: block; }
         .profile-dropdown-header { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; background-color: #f8f9fa; }
@@ -541,6 +581,8 @@
             .teacher-body { grid-template-columns: 1fr; }
             .teacher-sidebar { border-right: none; border-bottom: 1px solid #e9ecef; }
             .section-back-btn, .login-back-btn { font-size: 0.75rem; padding: 6px 12px; top: 12px; left: 12px; }
+            .events-carousel-wrap { padding: 0 50px; }
+            .event-nav-btn { width: 40px; height: 40px; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -586,6 +628,70 @@
                 <div class="info-card"><h3>VISION</h3><p>To dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potential and contribute meaningfully to building the nation.</p></div>
                 <div class="info-card"><h3>MISSION</h3><p>To protect and promote the right of every Filipino to quality, equitable, culture-based, and complete basic education where students learn in a child-friendly, gender-sensitive, safe, and motivating environment.</p></div>
                 <div class="info-card"><h3>CORE VALUES</h3><ul><li>Maka-Diyos</li><li>Maka-tao</li><li>Makakalikasan</li><li>Makabansa</li></ul></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Junior High School STE Section -->
+    <div class="jhs-section">
+        <div class="container">
+            <h2>JUNIOR HIGH SCHOOL OFFERINGS</h2>
+            <p class="jhs-subtitle">Alexis G. Santos National High School proudly offers the Special Program in Science, Technology, and Engineering (STE) for academically gifted Junior High School students.</p>
+            <div class="jhs-card">
+                <h3>🔬 Special Program in Science, Technology, and Engineering (STE)</h3>
+                <p>The STE Program is a DepEd-initiated curriculum designed for students with high aptitude and interest in science, mathematics, and technology. It provides advanced learning experiences to prepare students for higher education and careers in the fields of science and engineering.</p>
+                <p style="margin-top: 15px;"><strong>Program Highlights:</strong></p>
+                <ul>
+                    <li>Advanced and enriched science and mathematics curriculum</li>
+                    <li>Research-based learning and investigatory projects</li>
+                    <li>Exposure to robotics, ICT, and laboratory experiments</li>
+                    <li>Competitions, science fairs, and academic olympiads</li>
+                    <li>Preparation for Senior High School STEM strand and college science courses</li>
+                </ul>
+                <p style="margin-top: 15px; font-size: 0.85rem; color: #f0ad4e;"><strong>Note:</strong> Admission to the STE Program is based on academic performance, an entrance examination, and interview. Inquire at the school's registrar for details.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- School Events Carousel Section -->
+    <div class="events-section">
+        <div class="container">
+            <h2>School Events</h2>
+            <div class="events-carousel-wrap">
+                <div class="events-carousel-bg"></div>
+                <button class="event-nav-btn prev" onclick="changeEventSlide(-1)" aria-label="Previous">&lsaquo;</button>
+                <div class="events-carousel-inner">
+                    <div class="event-slide active" data-slide="0">
+                        <img src="event-teachers-month.png" alt="National Teachers' Month 2026"
+                             onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<div class=\'event-placeholder\'>National Teachers\' Month 2026<br><br>Add file: event-teachers-month.png</div>');">
+                        <div class="event-caption">
+                            <h4>National Teachers' Month 2026</h4>
+                            <p>September 5 – October 5, 2026</p>
+                        </div>
+                    </div>
+                    <div class="event-slide" data-slide="1">
+                        <img src="event-welcome-term2.png" alt="Welcome Alexians to Term 2"
+                             onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<div class=\'event-placeholder\'>Welcome Alexians to Term 2<br><br>Add file: event-welcome-term2.png</div>');">
+                        <div class="event-caption">
+                            <h4>Welcome Alexians to Term 2</h4>
+                            <p>September 16, 2026</p>
+                        </div>
+                    </div>
+                    <div class="event-slide" data-slide="2">
+                        <img src="event-value-month.png" alt="A Value A Month - August 2026"
+                             onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<div class=\'event-placeholder\'>A Value A Month — August 2026<br><br>Add file: event-value-month.png</div>');">
+                        <div class="event-caption">
+                            <h4>A Value A Month — August 2026</h4>
+                            <p>Nationalism · Patriotism · Global Citizenship</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="event-nav-btn next" onclick="changeEventSlide(1)" aria-label="Next">&rsaquo;</button>
+            </div>
+            <div class="event-dots" id="eventDots">
+                <button class="event-dot active" onclick="goToEventSlide(0)" aria-label="Slide 1"></button>
+                <button class="event-dot" onclick="goToEventSlide(1)" aria-label="Slide 2"></button>
+                <button class="event-dot" onclick="goToEventSlide(2)" aria-label="Slide 3"></button>
             </div>
         </div>
     </div>
@@ -776,8 +882,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label class="form-label-sm">Primary Phone Number <span class="req">*</span></label>
-                            <input type="text" class="form-control form-control-sm" id="phone" placeholder="Enter your phone number" inputmode="tel">
-                            <span class="field-hint">Active mobile number.</span>
+                            <input type="text" class="form-control form-control-sm" id="phone" placeholder="09123456789" inputmode="numeric" maxlength="13">
+                            <span class="field-hint">11–12 digits only (e.g., 09123456789).</span>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label-sm">Email Address <span class="req">*</span></label>
@@ -793,8 +899,8 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label-sm">Parent / Guardian Emergency Contact <span class="req">*</span></label>
-                            <input type="text" class="form-control form-control-sm" id="guardianContact" placeholder="Enter emergency contact number" inputmode="tel">
-                            <span class="field-hint">Reachable number in case of emergency.</span>
+                            <input type="text" class="form-control form-control-sm" id="guardianContact" placeholder="09123456789" inputmode="numeric" maxlength="13">
+                            <span class="field-hint">11–12 digits only.</span>
                         </div>
                     </div>
 
@@ -985,9 +1091,9 @@
                             <div class="pd-name" id="adminDropdownFullName">Admission Staff</div>
                             <div class="pd-role">Admin / Admission Staff</div>
                         </div>
-                        <button class="profile-dropdown-item" onclick="closeAllProfileDropdowns(); openAdminProfile();">👤 View & Edit Profile</button>
+                        <button class="profile-dropdown-item" onclick="handleDropdownAction(event, openAdminProfile)">👤 View &amp; Edit Profile</button>
                         <div class="profile-dropdown-divider"></div>
-                        <button class="profile-dropdown-item" onclick="closeAllProfileDropdowns(); signOutAdmin();">↩ Sign Out</button>
+                        <button class="profile-dropdown-item" onclick="handleDropdownAction(event, signOutAdmin)">↩ Sign Out</button>
                     </div>
                 </div>
             </div>
@@ -1056,9 +1162,9 @@
                             <div class="pd-name" id="studentDropdownFullName">Student</div>
                             <div class="pd-role">Student</div>
                         </div>
-                        <button class="profile-dropdown-item" onclick="closeAllProfileDropdowns(); openStudentProfile();">👤 View & Edit Profile</button>
+                        <button class="profile-dropdown-item" onclick="handleDropdownAction(event, openStudentProfile)">👤 View &amp; Edit Profile</button>
                         <div class="profile-dropdown-divider"></div>
-                        <button class="profile-dropdown-item" onclick="closeAllProfileDropdowns(); signOutStudent();">↩ Sign Out</button>
+                        <button class="profile-dropdown-item" onclick="handleDropdownAction(event, signOutStudent)">↩ Sign Out</button>
                     </div>
                 </div>
             </div>
@@ -1103,10 +1209,10 @@
                             <div class="pd-name" id="teacherDropdownFullName">Teacher</div>
                             <div class="pd-role">Teacher</div>
                         </div>
-                        <button class="profile-dropdown-item" onclick="closeAllProfileDropdowns(); openTeacherProfile();">👤 View & Edit Profile</button>
-                        <button class="profile-dropdown-item" onclick="closeAllProfileDropdowns(); generateStudentListPDF();">📄 Generate Student List (PDF)</button>
+                        <button class="profile-dropdown-item" onclick="handleDropdownAction(event, openTeacherProfile)">👤 View &amp; Edit Profile</button>
+                        <button class="profile-dropdown-item" onclick="handleDropdownAction(event, generateStudentListPDF)">📄 Generate Student List (PDF)</button>
                         <div class="profile-dropdown-divider"></div>
-                        <button class="profile-dropdown-item" onclick="closeAllProfileDropdowns(); signOutTeacher();">↩ Sign Out</button>
+                        <button class="profile-dropdown-item" onclick="handleDropdownAction(event, signOutTeacher)">↩ Sign Out</button>
                     </div>
                 </div>
             </div>
@@ -1233,10 +1339,34 @@
         function showMainNavbar() { if (mainNavbar) mainNavbar.style.display = ''; }
 
         // ============================================
+        // EVENTS CAROUSEL
+        // ============================================
+        let currentEventSlide = 0;
+        const totalEventSlides = 3;
+
+        function showEventSlide(index) {
+            const slides = document.querySelectorAll('.event-slide');
+            const dots = document.querySelectorAll('.event-dot');
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            if (slides[index]) slides[index].classList.add('active');
+            if (dots[index]) dots[index].classList.add('active');
+            currentEventSlide = index;
+        }
+        function changeEventSlide(delta) {
+            let newIndex = currentEventSlide + delta;
+            if (newIndex < 0) newIndex = totalEventSlides - 1;
+            if (newIndex >= totalEventSlides) newIndex = 0;
+            showEventSlide(newIndex);
+        }
+        function goToEventSlide(index) { showEventSlide(index); }
+        setInterval(() => { changeEventSlide(1); }, 6000);
+
+        // ============================================
         // PROFILE DROPDOWN
         // ============================================
         function toggleProfileDropdown(e, id) {
-            e.stopPropagation();
+            if (e) e.stopPropagation();
             const menu = document.getElementById(id);
             const isOpen = menu.classList.contains('active');
             closeAllProfileDropdowns();
@@ -1248,6 +1378,14 @@
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.profile-dropdown-wrap')) closeAllProfileDropdowns();
         });
+
+        function handleDropdownAction(e, actionFn) {
+            if (e) { e.stopPropagation(); e.preventDefault(); }
+            closeAllProfileDropdowns();
+            setTimeout(function() {
+                try { actionFn(); } catch (err) { console.error(err); }
+            }, 50);
+        }
 
         // ============================================
         // PASSWORD TOGGLE
@@ -1451,12 +1589,12 @@
         ];
 
         const defaultMockStudents = [
-            { id: 1, firstName: 'John', middleName: 'Doe', lastName: 'Ramos', grade: 'Grade 7', section: 'Grade 7 - Section A', lrn: '102876543210', gender: 'Male', dob: '2012-05-15', address: 'Liciada, Bustos, Bulacan', phone: '+63 912 345 6789', email: 'john.ramos@gmail.com', guardian: 'Ramon Ramos', guardianContact: '+63 912 987 6543', status: 'Pending', timeReceived: '10 mins ago', actionRequired: 'Documents Review', docs: { psa: true, report: true, moral: false }, hasRescheduleRequest: false },
-            { id: 2, firstName: 'Maria', middleName: 'Clara', lastName: 'Santos', grade: 'Grade 10', section: 'Grade 10 - Section B', lrn: '102876543211', gender: 'Female', dob: '2009-08-22', address: 'San Pedro, Bustos, Bulacan', phone: '+63 917 234 5678', email: 'maria.santos@gmail.com', guardian: 'Ana Santos', guardianContact: '+63 917 876 5432', status: 'Enrolled', timeReceived: '1 hour ago', actionRequired: 'Schedule Interview', docs: { psa: true, report: true, moral: true }, hasRescheduleRequest: false },
-            { id: 3, firstName: 'Juan', middleName: 'Dela', lastName: 'Cruz', grade: 'Grade 8', section: 'Grade 8 - Section A', lrn: '102876543212', gender: 'Male', dob: '2011-03-10', address: 'Poblacion, Bustos, Bulacan', phone: '+63 918 345 6789', email: 'juan.delacruz@gmail.com', guardian: 'Pedro Dela Cruz', guardianContact: '+63 918 987 6543', status: 'Pending', timeReceived: '3 hours ago', actionRequired: 'Finalize Enrollment', docs: { psa: true, report: false, moral: true }, hasRescheduleRequest: false },
-            { id: 4, firstName: 'Sarah', middleName: 'Mae', lastName: 'Flores', grade: 'Grade 9', section: 'Grade 9 - Section A', lrn: '102876543213', gender: 'Female', dob: '2010-11-30', address: 'Cambaog, Bustos, Bulacan', phone: '+63 919 456 7890', email: 'sarah.flores@gmail.com', guardian: 'Liza Flores', guardianContact: '+63 919 654 3210', status: 'Enrolled', timeReceived: 'Yesterday', actionRequired: 'Documents Review', docs: { psa: true, report: true, moral: true }, hasRescheduleRequest: false },
-            { id: 5, firstName: 'Miguel', middleName: 'Antonio', lastName: 'Reyes', grade: 'Grade 7', section: 'Grade 7 - Section A', lrn: '102876543214', gender: 'Male', dob: '2012-07-04', address: 'Liciada, Bustos, Bulacan', phone: '+63 920 567 8901', email: 'miguel.reyes@gmail.com', guardian: 'Rosa Reyes', guardianContact: '+63 920 765 4321', status: 'Pending', timeReceived: '2 days ago', actionRequired: 'Documents Review', docs: { psa: false, report: true, moral: true }, hasRescheduleRequest: false },
-            { id: 6, firstName: 'Marlon', middleName: 'Santos', lastName: 'Dela Cruz', grade: 'Grade 7', section: 'Pending Final Enrollment', lrn: '10287654321', gender: 'Male', dob: '2012-01-10', address: 'Liciada, Bustos, Bulacan', phone: '+63 912 345 6789', email: 'marlon.delacruz@gmail.com', guardian: 'Ramon Dela Cruz', guardianContact: '+63 912 987 6543', status: 'Enrolled', timeReceived: '5 hours ago', actionRequired: 'Schedule Interview', docs: { psa: true, report: true, moral: true }, hasRescheduleRequest: false, username: 'marlon santos dela cruz' }
+            { id: 1, firstName: 'John', middleName: 'Doe', lastName: 'Ramos', grade: 'Grade 7', section: 'Grade 7 - Section A', lrn: '102876543210', gender: 'Male', dob: '2012-05-15', address: 'Liciada, Bustos, Bulacan', phone: '09123456789', email: 'john.ramos@gmail.com', guardian: 'Ramon Ramos', guardianContact: '09129876543', status: 'Pending', timeReceived: '10 mins ago', actionRequired: 'Documents Review', docs: { psa: true, report: true, moral: false }, hasRescheduleRequest: false },
+            { id: 2, firstName: 'Maria', middleName: 'Clara', lastName: 'Santos', grade: 'Grade 10', section: 'Grade 10 - Section B', lrn: '102876543211', gender: 'Female', dob: '2009-08-22', address: 'San Pedro, Bustos, Bulacan', phone: '09172345678', email: 'maria.santos@gmail.com', guardian: 'Ana Santos', guardianContact: '09178765432', status: 'Enrolled', timeReceived: '1 hour ago', actionRequired: 'Schedule Interview', docs: { psa: true, report: true, moral: true }, hasRescheduleRequest: false },
+            { id: 3, firstName: 'Juan', middleName: 'Dela', lastName: 'Cruz', grade: 'Grade 8', section: 'Grade 8 - Section A', lrn: '102876543212', gender: 'Male', dob: '2011-03-10', address: 'Poblacion, Bustos, Bulacan', phone: '09183456789', email: 'juan.delacruz@gmail.com', guardian: 'Pedro Dela Cruz', guardianContact: '09189876543', status: 'Pending', timeReceived: '3 hours ago', actionRequired: 'Finalize Enrollment', docs: { psa: true, report: false, moral: true }, hasRescheduleRequest: false },
+            { id: 4, firstName: 'Sarah', middleName: 'Mae', lastName: 'Flores', grade: 'Grade 9', section: 'Grade 9 - Section A', lrn: '102876543213', gender: 'Female', dob: '2010-11-30', address: 'Cambaog, Bustos, Bulacan', phone: '09194567890', email: 'sarah.flores@gmail.com', guardian: 'Liza Flores', guardianContact: '09196543210', status: 'Enrolled', timeReceived: 'Yesterday', actionRequired: 'Documents Review', docs: { psa: true, report: true, moral: true }, hasRescheduleRequest: false },
+            { id: 5, firstName: 'Miguel', middleName: 'Antonio', lastName: 'Reyes', grade: 'Grade 7', section: 'Grade 7 - Section A', lrn: '102876543214', gender: 'Male', dob: '2012-07-04', address: 'Liciada, Bustos, Bulacan', phone: '09205678901', email: 'miguel.reyes@gmail.com', guardian: 'Rosa Reyes', guardianContact: '09207654321', status: 'Pending', timeReceived: '2 days ago', actionRequired: 'Documents Review', docs: { psa: false, report: true, moral: true }, hasRescheduleRequest: false },
+            { id: 6, firstName: 'Marlon', middleName: 'Santos', lastName: 'Dela Cruz', grade: 'Grade 7', section: 'Pending Final Enrollment', lrn: '10287654321', gender: 'Male', dob: '2012-01-10', address: 'Liciada, Bustos, Bulacan', phone: '09123456789', email: 'marlon.delacruz@gmail.com', guardian: 'Ramon Dela Cruz', guardianContact: '09129876543', status: 'Enrolled', timeReceived: '5 hours ago', actionRequired: 'Schedule Interview', docs: { psa: true, report: true, moral: true }, hasRescheduleRequest: false, username: 'marlon santos dela cruz' }
         ];
 
         const defaultTeachers = [
@@ -1485,9 +1623,18 @@
         let miniCalSelectedDate = null;
         let scheduledDate = null;
         let directorySelectionMode = false;
+        let adminRefreshInterval = null;
 
         function normalizeUsername(name) {
             return name.trim().toLowerCase().replace(/[\s\u00A0]+/g, ' ');
+        }
+
+        // ============================================
+        // PHONE VALIDATION HELPER (11–12 digits only)
+        // ============================================
+        function isValidPhone(val) {
+            const digits = String(val || '').replace(/[^0-9]/g, '');
+            return digits.length >= 11 && digits.length <= 12;
         }
 
         // ============================================
@@ -1592,9 +1739,18 @@
             closeForgotModal();
         }
 
-        function signOutAdmin() { if (!confirm('Are you sure you want to sign out?')) return; closeAdmin(); }
-        function signOutStudent() { if (!confirm('Are you sure you want to sign out?')) return; closeStudent(); }
-        function signOutTeacher() { if (!confirm('Are you sure you want to sign out?')) return; closeTeacher(); }
+        function signOutAdmin() {
+            if (!confirm('Are you sure you want to sign out?')) return;
+            closeAdmin();
+        }
+        function signOutStudent() {
+            if (!confirm('Are you sure you want to sign out?')) return;
+            closeStudent();
+        }
+        function signOutTeacher() {
+            if (!confirm('Are you sure you want to sign out?')) return;
+            closeTeacher();
+        }
 
         // ============================================
         // PROFILE PAGES
@@ -1724,7 +1880,7 @@
                 <label>Email Address</label>
                 <input type="email" id="studentProfileEmail" value="${s.email || ''}">
                 <label>Phone Number</label>
-                <input type="text" id="studentProfilePhone" value="${s.phone || ''}">
+                <input type="text" id="studentProfilePhone" value="${s.phone || ''}" inputmode="numeric" maxlength="13">
                 <label>Guardian Name</label>
                 <input type="text" id="studentProfileGuardian" value="${s.guardian || ''}">
                 <label>New Password (leave blank to keep current)</label>
@@ -1747,6 +1903,7 @@
             const newPass = document.getElementById('studentProfileNewPassword').value;
             const confirmPass = document.getElementById('studentProfileConfirmPassword').value;
             if (!fullName) { alert('Full name is required.'); return; }
+            if (phone && !isValidPhone(phone)) { alert('Phone number must be 11–12 digits only.'); return; }
             if (newPass) {
                 if (newPass.length < 8) { alert('Password must be at least 8 characters.'); return; }
                 if (newPass !== confirmPass) { alert('Passwords do not match.'); return; }
@@ -1882,7 +2039,10 @@
         function renderClassList(section) {
             const tbody = document.getElementById('classListBody');
             tbody.innerHTML = '';
-            const students = MASTER_ROSTER[section] || [];
+            const baseStudents = MASTER_ROSTER[section] || [];
+            const addedStudents = mockStudents.filter(s => s.section === section && !baseStudents.some(b => b.lrn === s.lrn))
+                .map(s => ({ name: `${s.lastName}, ${s.firstName} ${s.middleName}`, lrn: s.lrn, grade: s.grade, gender: s.gender, status: s.status }));
+            const students = [...baseStudents, ...addedStudents];
             if (students.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:30px;color:#888;">No students assigned to this section yet.</td></tr>';
                 return;
@@ -1925,7 +2085,10 @@
             doc.addPage();
             let isFirstSection = true;
             teacherSections.forEach(section => {
-                const students = MASTER_ROSTER[section] || [];
+                const baseStudents = MASTER_ROSTER[section] || [];
+                const addedStudents = mockStudents.filter(s => s.section === section && !baseStudents.some(b => b.lrn === s.lrn))
+                    .map(s => ({ name: `${s.lastName}, ${s.firstName} ${s.middleName}`, lrn: s.lrn, grade: s.grade, gender: s.gender, status: s.status }));
+                const students = [...baseStudents, ...addedStudents];
                 if (!isFirstSection) doc.addPage();
                 isFirstSection = false;
                 doc.setFontSize(14); doc.setFont(undefined, 'bold');
@@ -2024,8 +2187,10 @@
             vals[5].textContent = s.guardian || '-';
 
             const apptContent = document.getElementById('appointmentContent');
-            if (user.appointment) {
-                const a = user.appointment;
+            // Resolve latest appointment data from userDatabase (source of truth) so admin changes reflect
+            const liveUser = userDatabase.find(u => u.username === user.username) || user;
+            if (liveUser.appointment) {
+                const a = liveUser.appointment;
                 const statusClass = a.status === 'pending' ? 'pending' : a.status === 'rejected' ? 'rejected' : 'approved';
                 const statusText = a.status === 'pending' ? 'Pending Approval' : a.status === 'rejected' ? 'Rejected' : 'Approved';
                 apptContent.innerHTML = `
@@ -2136,6 +2301,15 @@
                 const dbEntry = userDatabase.find(u => u.username === currentStudentUser.username);
                 if (dbEntry) { dbEntry.rescheduleRequest = currentStudentUser.rescheduleRequest; }
                 if (currentStudentUser.appointment) currentStudentUser.appointment.status = 'pending';
+                if (dbEntry && dbEntry.appointment) dbEntry.appointment.status = 'pending';
+                const mock = mockStudents.find(s => s.lrn === currentStudentUser.studentData.lrn);
+                if (mock) {
+                    mock.hasRescheduleRequest = true;
+                    mock.rescheduleRequest = currentStudentUser.rescheduleRequest;
+                }
+                if (document.getElementById('adminPage').style.display === 'block') {
+                    renderAdminDashboard();
+                }
             }
             closeRescheduleModal();
             showPopup('Reschedule Request Submitted', 'Your reschedule request for ' + formatDateLong(miniCalSelectedDate) + ' has been submitted and is pending approval.', 'success');
@@ -2295,11 +2469,22 @@
                 document.getElementById('adminAvatarInitial').textContent = (user.fullName || 'A').charAt(0).toUpperCase();
             }
             renderAdminDashboard();
+            if (adminRefreshInterval) clearInterval(adminRefreshInterval);
+            adminRefreshInterval = setInterval(function() {
+                if (document.getElementById('adminPage').style.display === 'block') {
+                    renderAdminDashboard();
+                    if (document.getElementById('adminModal').classList.contains('active') &&
+                        document.getElementById('directoryBody')) {
+                        renderDirectoryRows();
+                    }
+                }
+            }, 4000);
         }
         function closeAdmin() {
             showMainNavbar();
             document.getElementById('adminPage').style.display = 'none';
             document.body.style.overflow = 'auto';
+            if (adminRefreshInterval) { clearInterval(adminRefreshInterval); adminRefreshInterval = null; }
         }
 
         function syncRescheduleToMock() {
@@ -2314,12 +2499,18 @@
             });
         }
 
-        function renderAdminDashboard() {
-            syncRescheduleToMock();
+        function recalcStats() {
             const totalEnrolled = mockStudents.filter(s => s.status === 'Enrolled').length;
             const pendingCount = mockStudents.filter(s => s.status === 'Pending').length;
-            document.getElementById('statTotalEnrolled').textContent = totalEnrolled.toLocaleString();
-            document.getElementById('statPending').textContent = pendingCount;
+            const elEnrolled = document.getElementById('statTotalEnrolled');
+            const elPending = document.getElementById('statPending');
+            if (elEnrolled) elEnrolled.textContent = totalEnrolled.toLocaleString();
+            if (elPending) elPending.textContent = pendingCount.toLocaleString();
+        }
+
+        function renderAdminDashboard() {
+            syncRescheduleToMock();
+            recalcStats();
 
             const recentBody = document.getElementById('recentActivityBody');
             recentBody.innerHTML = '';
@@ -2421,6 +2612,9 @@
                         <option value="lrn">LRN</option>
                     </select>
                 </div>
+                <div class="directory-header-row" id="directoryHeaderRow">
+                    <button class="btn-dots" id="headerDotsBtn" onclick="toggleDirectorySelectionMode(true)" title="Select students to delete">⋮</button>
+                </div>
                 <div id="directoryActionBar" class="directory-action-bar"></div>
                 <table class="directory-table" id="directoryTable">
                     <thead>
@@ -2518,13 +2712,6 @@
                     cb.onchange = function() { updateDirectorySelectionState(); };
                     checkWrap.appendChild(cb);
                     td5.appendChild(checkWrap);
-                } else {
-                    const dotsBtn = document.createElement('button');
-                    dotsBtn.className = 'btn-action btn-dots';
-                    dotsBtn.textContent = '⋮';
-                    dotsBtn.title = 'Select for deletion';
-                    dotsBtn.onclick = function() { toggleDirectorySelectionMode(true); };
-                    td5.appendChild(dotsBtn);
                 }
 
                 tr.appendChild(td1); tr.appendChild(td2); tr.appendChild(td3); tr.appendChild(td4); tr.appendChild(td5);
@@ -2553,6 +2740,8 @@
 
         function toggleDirectorySelectionMode(enable) {
             directorySelectionMode = enable;
+            const headerRow = document.getElementById('directoryHeaderRow');
+            if (headerRow) headerRow.style.display = enable ? 'none' : 'flex';
             renderDirectoryRows();
         }
 
@@ -2577,9 +2766,11 @@
             });
             mockStudents = mockStudents.filter(x => !ids.includes(x.id));
             directorySelectionMode = false;
+            const headerRow = document.getElementById('directoryHeaderRow');
+            if (headerRow) headerRow.style.display = 'flex';
             alert('Selected student(s) deleted successfully.');
             renderDirectoryRows();
-            renderAdminDashboard();
+            recalcStats();
         }
 
         function filterDirectory() { renderDirectoryRows(); }
@@ -2597,7 +2788,7 @@
                     <div class="col-md-4 mb-2"><label class="form-label-sm">LRN</label><input type="text" class="form-control form-control-sm" id="editLrn" value="${s.lrn}"></div>
                     <div class="col-md-4 mb-2"><label class="form-label-sm">Grade</label><select class="form-select form-select-sm" id="editGrade"><option ${s.grade==='Grade 7'?'selected':''}>Grade 7</option><option ${s.grade==='Grade 8'?'selected':''}>Grade 8</option><option ${s.grade==='Grade 9'?'selected':''}>Grade 9</option><option ${s.grade==='Grade 10'?'selected':''}>Grade 10</option><option ${s.grade==='Grade 11'?'selected':''}>Grade 11</option><option ${s.grade==='Grade 12'?'selected':''}>Grade 12</option></select></div>
                     <div class="col-md-4 mb-2"><label class="form-label-sm">Section</label><input type="text" class="form-control form-control-sm" id="editSection" value="${s.section || ''}"></div>
-                    <div class="col-md-4 mb-2"><label class="form-label-sm">Phone</label><input type="text" class="form-control form-control-sm" id="editPhone" value="${s.phone}"></div>
+                    <div class="col-md-4 mb-2"><label class="form-label-sm">Phone (11–12 digits)</label><input type="text" class="form-control form-control-sm" id="editPhone" value="${s.phone}" inputmode="numeric" maxlength="13"></div>
                     <div class="col-md-4 mb-2"><label class="form-label-sm">Email</label><input type="email" class="form-control form-control-sm" id="editEmail" value="${s.email}"></div>
                     <div class="col-md-4 mb-2"><label class="form-label-sm">Guardian</label><input type="text" class="form-control form-control-sm" id="editGuardian" value="${s.guardian}"></div>
                 </div>
@@ -2607,18 +2798,22 @@
                 </div>
             `;
             openAdminModal('Edit Student', content);
+            const headerRow = document.getElementById('directoryHeaderRow');
+            if (headerRow) headerRow.style.display = 'none';
         }
 
         function saveEditedStudent(id) {
             const s = mockStudents.find(x => x.id === id);
             if (!s) return;
+            const newPhone = document.getElementById('editPhone').value.trim();
+            if (newPhone && !isValidPhone(newPhone)) { alert('Phone number must be 11–12 digits only.'); return; }
             s.firstName = document.getElementById('editFirstName').value.trim();
             s.middleName = document.getElementById('editMiddleName').value.trim();
             s.lastName = document.getElementById('editLastName').value.trim();
             s.lrn = document.getElementById('editLrn').value.trim();
             s.grade = document.getElementById('editGrade').value;
             s.section = document.getElementById('editSection').value.trim();
-            s.phone = document.getElementById('editPhone').value.trim();
+            s.phone = newPhone;
             s.email = document.getElementById('editEmail').value.trim();
             s.guardian = document.getElementById('editGuardian').value.trim();
             alert('Student information updated!');
@@ -2628,6 +2823,8 @@
         function viewStudent(id) {
             const s = mockStudents.find(x => x.id === id);
             if (!s) return;
+            const headerRow = document.getElementById('directoryHeaderRow');
+            if (headerRow) headerRow.style.display = 'none';
             const statusClass = s.status === 'Pending' ? 'status-pending' : 'status-enrolled';
             const initials = (s.firstName[0] + s.lastName[0]).toUpperCase();
             const docPSA = s.docs.psa ? '<span class="doc-status">Uploaded</span>' : '<span class="doc-status" style="background:#f8d7da;color:#842029">Missing</span>';
@@ -2689,21 +2886,81 @@
             openAdminModal('Student Profile', content);
         }
 
+        // ============================================
+        // APPROVE / REJECT RESCHEDULE — reflects to student account
+        // FIX: capture the requested date BEFORE nulling the reschedule request
+        // ============================================
         function approveReschedule(id) {
             const s = mockStudents.find(x => x.id === id);
             if (!s) return;
+
+            // ⚠️ CRITICAL: Capture the requested date BEFORE we null out the request
+            let approvedDateLong = null;
+            let approvedDateRaw = null;
+            if (s.rescheduleRequest) {
+                approvedDateLong = s.rescheduleRequest.preferredDate || null;
+                approvedDateRaw = s.rescheduleRequest.preferredDateRaw || null;
+            }
+            // Fallback: check the live student account if mock had no data
+            if (!approvedDateLong) {
+                userDatabase.forEach(u => {
+                    if (u.role === 'student' && u.studentData && u.studentData.lrn === s.lrn) {
+                        if (u.rescheduleRequest && u.rescheduleRequest.preferredDate) {
+                            approvedDateLong = u.rescheduleRequest.preferredDate;
+                            approvedDateRaw = u.rescheduleRequest.preferredDateRaw;
+                        }
+                    }
+                });
+            }
+
+            // Now clear the mock's reschedule flag
             s.hasRescheduleRequest = false;
             s.rescheduleRequest = null;
             s.actionRequired = 'Schedule Interview';
+
+            // Reflect on student account
             userDatabase.forEach(u => {
-                if (u.role === 'student' && u.studentData.lrn === s.lrn) {
+                if (u.role === 'student' && u.studentData && u.studentData.lrn === s.lrn) {
                     u.rescheduleRequest = null;
-                    if (u.appointment) u.appointment.status = 'approved';
+                    if (u.appointment) {
+                        u.appointment.status = 'approved';
+                        // ✅ Update the appointment date to the approved reschedule date
+                        if (approvedDateLong) {
+                            u.appointment.date = approvedDateLong;
+                        }
+                        if (!u.appointment.time) u.appointment.time = '8:00 AM - 3:00 PM';
+                        if (!u.appointment.location) u.appointment.location = 'Admission Office, Main Building.';
+                    } else if (approvedDateLong) {
+                        // If the student had no appointment, create one with the new date
+                        u.appointment = {
+                            type: 'Passing of Enrollment Form',
+                            date: approvedDateLong,
+                            time: '8:00 AM - 3:00 PM',
+                            location: 'Admission Office, Main Building.',
+                            status: 'approved'
+                        };
+                    }
                 }
             });
-            alert('Reschedule request approved!');
+
+            // Defensive: also clear any duplicate mock entries with same LRN
+            mockStudents.forEach(m => {
+                if (m.lrn === s.lrn && m !== s) {
+                    m.hasRescheduleRequest = false;
+                    m.rescheduleRequest = null;
+                }
+            });
+
+            alert('Reschedule request approved!\n\nThe appointment has been moved to: ' + (approvedDateLong || '(no date specified)') + '\n\nThe student account has been updated.');
             closeAdminModal();
             renderAdminDashboard();
+
+            // If the currently logged-in student IS this student, refresh their dashboard
+            if (currentStudentUser && currentStudentUser.studentData && currentStudentUser.studentData.lrn === s.lrn) {
+                const fresh = userDatabase.find(u => u.username === currentStudentUser.username);
+                if (fresh) currentStudentUser = fresh;
+                renderStudentDashboard(currentStudentUser);
+            }
         }
         function rejectReschedule(id) {
             const s = mockStudents.find(x => x.id === id);
@@ -2712,14 +2969,17 @@
             s.hasRescheduleRequest = false;
             s.rescheduleRequest = null;
             userDatabase.forEach(u => {
-                if (u.role === 'student' && u.studentData.lrn === s.lrn) {
+                if (u.role === 'student' && u.studentData && u.studentData.lrn === s.lrn) {
                     u.rescheduleRequest = null;
                     if (u.appointment) u.appointment.status = 'rejected';
                 }
             });
-            alert('Reschedule request rejected.');
+            alert('Reschedule request rejected. The student account has been updated.');
             closeAdminModal();
             renderAdminDashboard();
+            if (currentStudentUser && currentStudentUser.studentData && currentStudentUser.studentData.lrn === s.lrn) {
+                renderStudentDashboard(currentStudentUser);
+            }
         }
         function openAssignTeacher(id) { viewStudent(id); }
         function confirmAssign(id) {
@@ -2727,15 +2987,33 @@
             const selectedSection = document.getElementById('assignSectionSelect').value;
             if (!selectedSection) { alert('Please select a section to assign this student.'); return; }
             s.section = selectedSection;
+            const studentName = `${s.lastName}, ${s.firstName} ${s.middleName}`;
+            if (!MASTER_ROSTER[selectedSection]) MASTER_ROSTER[selectedSection] = [];
+            if (!MASTER_ROSTER[selectedSection].some(x => x.lrn === s.lrn)) {
+                MASTER_ROSTER[selectedSection].push({
+                    name: studentName,
+                    lrn: s.lrn,
+                    grade: s.grade,
+                    gender: s.gender,
+                    status: s.status
+                });
+            }
+            const teacherObj = teachers.find(t => t.section === selectedSection);
+            if (teacherObj) {
+                teacherObj.count = (MASTER_ROSTER[selectedSection] || []).length;
+            }
             alert('Student assigned to ' + selectedSection + ' successfully!');
             closeAdminModal();
             openDirectory();
+            recalcStats();
         }
 
         // ============================================
         // MAX SLOT LIMIT
         // ============================================
         function openMaxLimitSettings() {
+            const headerRow = document.getElementById('directoryHeaderRow');
+            if (headerRow) headerRow.style.display = 'none';
             const content = `
                 <p class="text-muted small mb-3">Set the maximum number of students allowed to book an appointment per day.</p>
                 <div class="row">
@@ -2764,6 +3042,8 @@
         // NEW ENROLLMENT (WALK-IN)
         // ============================================
         function openNewEnrollment() {
+            const headerRow = document.getElementById('directoryHeaderRow');
+            if (headerRow) headerRow.style.display = 'none';
             const content = `
                 <p class="text-muted small mb-3">Register a new student who walked in to the admission office.</p>
                 <div class="row">
@@ -2774,9 +3054,9 @@
                     <div class="col-md-4 mb-2"><label class="form-label-sm">Gender <span class="req">*</span></label><select class="form-select form-select-sm" id="newGender"><option value="">-- Select --</option><option>Male</option><option>Female</option></select></div>
                     <div class="col-md-4 mb-2"><label class="form-label-sm">LRN</label><input type="text" class="form-control form-control-sm" id="newLrn" placeholder="12-digit LRN if known"></div>
                     <div class="col-md-6 mb-2"><label class="form-label-sm">Home Address <span class="req">*</span></label><input type="text" class="form-control form-control-sm" id="newAddress" placeholder="Complete address"></div>
-                    <div class="col-md-6 mb-2"><label class="form-label-sm">Phone Number <span class="req">*</span></label><input type="text" class="form-control form-control-sm" id="newPhone" placeholder="+63 912 345 6789"></div>
+                    <div class="col-md-6 mb-2"><label class="form-label-sm">Phone Number (11–12 digits) <span class="req">*</span></label><input type="text" class="form-control form-control-sm" id="newPhone" placeholder="09123456789" inputmode="numeric" maxlength="13"></div>
                     <div class="col-md-6 mb-2"><label class="form-label-sm">Guardian Full Name <span class="req">*</span></label><input type="text" class="form-control form-control-sm" id="newGuardian" placeholder="Parent / Guardian name"></div>
-                    <div class="col-md-6 mb-2"><label class="form-label-sm">Guardian Contact <span class="req">*</span></label><input type="text" class="form-control form-control-sm" id="newGuardianContact" placeholder="+63 912 987 6543"></div>
+                    <div class="col-md-6 mb-2"><label class="form-label-sm">Guardian Contact (11–12 digits) <span class="req">*</span></label><input type="text" class="form-control form-control-sm" id="newGuardianContact" placeholder="09123456789" inputmode="numeric" maxlength="13"></div>
                     <div class="col-md-6 mb-2"><label class="form-label-sm">Grade Level <span class="req">*</span></label><select class="form-select form-select-sm" id="newGrade" onchange="updateNewEnrollmentSections()"><option value="">-- Select Grade --</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select></div>
                     <div class="col-md-6 mb-2"><label class="form-label-sm">Assign to Section (optional)</label><select class="form-select form-select-sm" id="newSection"><option value="">-- Select Grade First --</option></select></div>
                 </div>
@@ -2803,17 +3083,37 @@
             const grade = document.getElementById('newGrade').value;
             const section = document.getElementById('newSection').value;
             if (!fn || !mn || !ln || !dob || !gender || !address || !phone || !guardian || !guardianContact || !grade) { alert('Please fill in all required fields.'); return; }
+            if (!isValidPhone(phone)) { alert('Phone number must be 11–12 digits only.'); return; }
+            if (!isValidPhone(guardianContact)) { alert('Guardian contact must be 11–12 digits only.'); return; }
             const newId = Math.max(...mockStudents.map(s => s.id), 0) + 1;
-            mockStudents.push({ id: newId, firstName: fn, middleName: mn, lastName: ln, grade, section, lrn: lrn || '—', gender, dob, address, phone, email: '-', guardian, guardianContact, status: 'Pending', timeReceived: 'Just now', actionRequired: 'Documents Review', docs: { psa: false, report: false, moral: false }, hasRescheduleRequest: false });
-            alert('Student registered successfully!');
+            const newLrn = lrn || '—';
+            mockStudents.push({ id: newId, firstName: fn, middleName: mn, lastName: ln, grade, section, lrn: newLrn, gender, dob, address, phone, email: '-', guardian, guardianContact, status: 'Pending', timeReceived: 'Just now', actionRequired: 'Documents Review', docs: { psa: false, report: false, moral: false }, hasRescheduleRequest: false });
+            if (section) {
+                const studentName = `${ln}, ${fn} ${mn}`;
+                if (!MASTER_ROSTER[section]) MASTER_ROSTER[section] = [];
+                if (!MASTER_ROSTER[section].some(x => x.lrn === newLrn)) {
+                    MASTER_ROSTER[section].push({
+                        name: studentName,
+                        lrn: newLrn,
+                        grade: grade,
+                        gender: gender,
+                        status: 'Pending'
+                    });
+                }
+                const teacherObj = teachers.find(t => t.section === section);
+                if (teacherObj) teacherObj.count = (MASTER_ROSTER[section] || []).length;
+            }
+            alert('Student registered successfully!' + (section ? '\nAssigned to ' + section : ''));
             closeAdminModal();
-            renderAdminDashboard();
+            recalcStats();
         }
 
         // ============================================
         // TEACHER ACCOUNT REGISTRATION
         // ============================================
         function openTeacherAccountReg() {
+            const headerRow = document.getElementById('directoryHeaderRow');
+            if (headerRow) headerRow.style.display = 'none';
             const content = `
                 <p class="text-muted small mb-3">Create a new teacher account. The teacher can use their full name and password to log in.</p>
                 <div class="row">
@@ -3114,10 +3414,12 @@
             const guardianContact = document.getElementById('guardianContact');
             if (!address.value.trim()) { return showError('Home Address is required.', address); }
             if (!phone.value.trim()) { return showError('Primary Phone Number is required.', phone); }
+            if (!isValidPhone(phone.value.trim())) { return showError('Phone number must be 11–12 digits only (e.g., 09123456789).', phone); }
             if (!contactEmail.value.trim()) { return showError('Contact Email Address is required.', contactEmail); }
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail.value.trim())) { return showError('Please enter a valid contact email address.', contactEmail); }
             if (!guardianName.value.trim()) { return showError('Parent / Guardian Full Name is required.', guardianName); }
             if (!guardianContact.value.trim()) { return showError('Parent / Guardian Emergency Contact is required.', guardianContact); }
+            if (!isValidPhone(guardianContact.value.trim())) { return showError('Guardian contact must be 11–12 digits only.', guardianContact); }
 
             const gradeLevel = document.getElementById('gradeLevel');
             const prevSchool = document.getElementById('prevSchool');
@@ -3213,6 +3515,9 @@
                 document.getElementById('shsStrand').innerHTML = '<option value="">-- Select Track First --</option>';
                 document.getElementById('generalAverageRow').style.display = 'none';
                 closeAllOverlays();
+                if (document.getElementById('adminPage').style.display === 'block') {
+                    recalcStats();
+                }
             });
         }
 
